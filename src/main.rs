@@ -17,6 +17,8 @@ pub extern "C" fn _start() -> ! {
     .for_each(|(i, byte)| unsafe {
         *vga_buffer.offset(i as isize) = byte;
     });
+
+    vga_buffer::print_something();
     loop{}
 }
 
